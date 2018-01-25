@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pekemon.Plugins", "pekemon.Plugins.csproj", "{CDA11D97-4401-8E54-3F4B-8CB30F167AE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pekemon", "pekemon.csproj", "{F8B793E7-7980-20EC-EC63-2FD421D14296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pekemon.Editor", "pekemon.Editor.csproj", "{9D61BB82-834E-D472-6E6A-66ABA2DA8204}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDA11D97-4401-8E54-3F4B-8CB30F167AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA11D97-4401-8E54-3F4B-8CB30F167AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA11D97-4401-8E54-3F4B-8CB30F167AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA11D97-4401-8E54-3F4B-8CB30F167AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8B793E7-7980-20EC-EC63-2FD421D14296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B793E7-7980-20EC-EC63-2FD421D14296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B793E7-7980-20EC-EC63-2FD421D14296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8B793E7-7980-20EC-EC63-2FD421D14296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D61BB82-834E-D472-6E6A-66ABA2DA8204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D61BB82-834E-D472-6E6A-66ABA2DA8204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D61BB82-834E-D472-6E6A-66ABA2DA8204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D61BB82-834E-D472-6E6A-66ABA2DA8204}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
