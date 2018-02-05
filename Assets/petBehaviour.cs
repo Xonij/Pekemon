@@ -6,6 +6,7 @@ public class petBehaviour : MonoBehaviour {
 
     public GameObject player;
     public float distToPlayer;
+    public float speed;
 
     void Start () {}
 	void Update ()
@@ -18,7 +19,7 @@ public class petBehaviour : MonoBehaviour {
     {
         if (distToPlayer > 3.5f)
         {
-            this.gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, player.transform.position, Time.deltaTime * 3f);
+            this.gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, player.transform.position, Time.deltaTime * speed);
         }
     }
     void hideWhenInAttack()
