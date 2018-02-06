@@ -6,17 +6,16 @@ using UnityEngine.UI;
 public class npc : MonoBehaviour {
 
     public bool useAltTextBox;
+    [TextArea(1, 15)]
+    public string shortDialog;
     public GameObject player;
     public float distToPlayer;
     public GameObject npcTextBox,screenCanvas;
     public bool seenThisNpc=false;
 
-
     void Start ()
-    {
-		
+    {	
 	}
-
 	void Update ()
     {
         distToPlayer = Vector3.Distance(this.transform.position, player.transform.position);
@@ -26,7 +25,7 @@ public class npc : MonoBehaviour {
             if (distToPlayer < 3)
             {
                 npcTextBox.SetActive(true);
-                npcTextBox.GetComponentInChildren<Text>().text = "Sanon jotain, kun tulet lähelleni.";
+                npcTextBox.GetComponentInChildren<Text>().text = shortDialog;
                 seenThisNpc = true;
             }
             else if (seenThisNpc == true && distToPlayer > 3)
