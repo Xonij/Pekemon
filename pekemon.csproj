@@ -253,9 +253,6 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Android.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -293,12 +290,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scriptit\enemyMovement.cs" />
     <Compile Include="Assets\Scriptit\gamemanagement.cs" />
+    <Compile Include="Assets\Scriptit\houseSceneVersion.cs" />
     <Compile Include="Assets\Scriptit\npc.cs" />
     <Compile Include="Assets\Scriptit\npcColliderVersion.cs" />
     <Compile Include="Assets\Scriptit\objectDisabler.cs" />
     <Compile Include="Assets\Scriptit\petBehaviour.cs" />
     <Compile Include="Assets\Scriptit\playerAttacking.cs" />
+    <Compile Include="Assets\Scriptit\playerButtonControl.cs" />
     <Compile Include="Assets\Scriptit\playerMovement.cs" />
+    <Compile Include="Assets\Scriptit\tpTo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Note about Editor Folder.txt" />
