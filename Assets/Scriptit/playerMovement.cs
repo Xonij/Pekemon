@@ -8,9 +8,10 @@ public class playerMovement : MonoBehaviour {
     public float speed,speedDefault = 2.7f;
     public GameObject skin;
     public Sprite[] playerSprites;
+    Animator animator;
 
 	void Start () {
-		
+        animator = GetComponent<Animator>();
 	}
 	void Update () {
 
@@ -27,29 +28,35 @@ public class playerMovement : MonoBehaviour {
         if (GetComponent<playerAttacking>().atkAllow == true)
         {
             if (Input.GetButton("up") || Input.GetKey(KeyCode.UpArrow))
-            {
-                skin.GetComponent<SpriteRenderer>().sprite = playerSprites[0];
+            {  
+                //skin.GetComponent<SpriteRenderer>().sprite = playerSprites[0];
                 GetComponent<playerAttacking>().DirectionFacing = directionFacing.up;
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
             }
             if (Input.GetButton("down") || Input.GetKey(KeyCode.DownArrow))
             {
-                skin.GetComponent<SpriteRenderer>().sprite = playerSprites[1];
+                //skin.GetComponent<SpriteRenderer>().sprite = playerSprites[1];
                 GetComponent<playerAttacking>().DirectionFacing = directionFacing.down;
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
             }
             if (Input.GetButton("left") || Input.GetKey(KeyCode.LeftArrow))
             {
-                skin.GetComponent<SpriteRenderer>().sprite = playerSprites[2];
+                //skin.GetComponent<SpriteRenderer>().sprite = playerSprites[2];
                 GetComponent<playerAttacking>().DirectionFacing = directionFacing.left;
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
             }
             if (Input.GetButton("right") || Input.GetKey(KeyCode.RightArrow))
             {
-                skin.GetComponent<SpriteRenderer>().sprite = playerSprites[3];
+                //skin.GetComponent<SpriteRenderer>().sprite = playerSprites[3];
                 GetComponent<playerAttacking>().DirectionFacing = directionFacing.right;
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
             }
+
+            if (Input.GetButton("up")) { animator.SetInteger("dirInt", 1); }
+            else if (Input.GetButton("down")) { animator.SetInteger("dirInt", 2); }
+            else if (Input.GetButton("left")) { animator.SetInteger("dirInt", 3); }
+            else if (Input.GetButton("right")) { animator.SetInteger("dirInt", 4); }
+            else { animator.SetInteger("dirInt", 0); }
         }
     }
     void OnCollisionEnter2D(Collision2D other)

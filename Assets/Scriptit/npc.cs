@@ -12,7 +12,9 @@ public class npc : MonoBehaviour {
     public float distToPlayer;
     public GameObject npcTextBox,screenCanvas;
     public bool seenThisNpc=false;
-
+    public GameObject skinHolder;
+    public Image[] npcprites;
+    
     protected float angle;
 
     void Start ()
@@ -20,10 +22,8 @@ public class npc : MonoBehaviour {
 	}
 	void Update ()
     {
-        if(distToPlayer<4)
-        lookToPlayerSide();
-
         distToPlayer = Vector3.Distance(this.transform.position, player.transform.position);
+        if (distToPlayer<4) { lookToPlayerSide(); }
 
         if (useAltTextBox == false)
         {
@@ -66,12 +66,12 @@ public class npc : MonoBehaviour {
         else if (angle > -2.25f && angle < -0.75f) { Debug.Log("right"); }
         */
         if ((angle < (-Mathf.PI/4)*3 && angle > -Mathf.PI)||(angle > (Mathf.PI / 4) * 3 && angle < Mathf.PI))
-        { Debug.Log("up"); }
+        { Debug.Log("up"); skinHolder.GetComponent<SpriteRenderer>().sprite = npcprites[0].sprite; }
         if (angle > (-Mathf.PI / 4) && angle < (Mathf.PI / 4))
-        { Debug.Log("down"); }
+        { Debug.Log("down"); skinHolder.GetComponent<SpriteRenderer>().sprite = npcprites[1].sprite; }
         if (angle > (Mathf.PI / 4) && angle < (Mathf.PI / 4) * 3)
-        { Debug.Log("left"); }
+        { Debug.Log("left"); skinHolder.GetComponent<SpriteRenderer>().sprite = npcprites[2].sprite; }
         if ((angle > (-Mathf.PI / 4) * 3 && angle < (-Mathf.PI / 4)))
-        { Debug.Log("right"); }
+        { Debug.Log("right"); skinHolder.GetComponent<SpriteRenderer>().sprite = npcprites[3].sprite; }
     }
 }
