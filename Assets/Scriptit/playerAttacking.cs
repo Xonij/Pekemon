@@ -15,8 +15,10 @@ public class playerAttacking : MonoBehaviour {
     public Image UIhealth;
     float hpMax = 1200;
     float healthCalculated;
+    public Vector2 bedLocation;
+    public gamemanagement gm;
 
-	void Start ()
+    void Start ()
     {
         DirectionFacing = directionFacing.down;
         attackCollider = attackSprt.GetComponent<Collider2D>();
@@ -27,11 +29,24 @@ public class playerAttacking : MonoBehaviour {
         attackControls();
         spriteRot();
         spritePos();
+
+        if (playerHealth <= 0) { PlayerIsDead(); }
 	}
     public void calcHealth()
     {
         healthCalculated = playerHealth / hpMax;
         UIhealth.fillAmount = healthCalculated;
+    }
+    public void PlayerIsDead()
+    {
+        //fade screen out
+        Time.timeScale = 0;
+        gm.GetComponent<gamemanagement>().day += 1;
+        gm.GetComponent<gamemanagement>().timeOfDay = 6;
+        this.gameObject.transform.position = bedLocation;
+        playerHealth = Mathf.RoundToInt(hpMax);
+        // fade screen in
+
     }
     public void attackControls()
     {

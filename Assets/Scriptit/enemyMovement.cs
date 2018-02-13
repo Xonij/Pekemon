@@ -10,6 +10,7 @@ public class enemyMovement : MonoBehaviour {
     public state EnemyState=state.idle;
     [Range(0,1)]
     public int health;
+    public gamemanagement gm;
 
     void Start ()
     {
@@ -33,7 +34,12 @@ public class enemyMovement : MonoBehaviour {
             }
             if (health <= 0) { EnemyState = state.dead; }
         }
-        else { StartCoroutine(deathStateOperation()); }
+        else
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gm.GetComponent<gamemanagement>().currentPetAttackGain();
+            StartCoroutine(deathStateOperation());
+        }
     }
     public void animationChanger()
     {
@@ -52,8 +58,8 @@ public class enemyMovement : MonoBehaviour {
     }
     IEnumerator deathStateOperation()
     {
-
         yield return new WaitForSeconds(2f);
+
         Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D other)

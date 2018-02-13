@@ -5,6 +5,7 @@ using UnityEngine;
 public class gamemanagement : MonoBehaviour {
 
     [Header("World")]
+    public int day;
     public int timeOfDay;
     [Header("__________________________")]
     //lists / arrays I dont fucking know
@@ -18,9 +19,19 @@ public class gamemanagement : MonoBehaviour {
 	void Start () {
         Cursor.visible = false;
 	}
-	void Update () {
-		
+	void Update ()
+    {	
 	}
+    public void currentPetAttackGain()
+    {
+        for (int i = 0; i < AllMonsters.Length; i++)
+        {
+            if (i == CurrentPetInt)
+            {
+               AllMonsters[i - 1].strength += 1;
+            }
+        }
+    }
 }
 [System.Serializable]
 public class Monsters
