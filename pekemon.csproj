@@ -276,6 +276,7 @@
     <Compile Include="Assets\Scriptit\playerButtonControl.cs" />
     <Compile Include="Assets\Scriptit\playerMovement.cs" />
     <Compile Include="Assets\Scriptit\tpTo.cs" />
+    <Compile Include="Assets\Scriptit\WaterTile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Note about Editor Folder.txt" />
