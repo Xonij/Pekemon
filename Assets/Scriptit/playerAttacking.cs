@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerAttacking : MonoBehaviour {
 
@@ -11,6 +12,10 @@ public class playerAttacking : MonoBehaviour {
     public directionFacing DirectionFacing;
     public Collider2D attackCollider;
 
+    public Image UIhealth;
+    float hpMax = 1200;
+    float healthCalculated;
+
 	void Start ()
     {
         DirectionFacing = directionFacing.down;
@@ -18,10 +23,16 @@ public class playerAttacking : MonoBehaviour {
     }
 	void Update ()
     {
+        calcHealth();
         attackControls();
         spriteRot();
         spritePos();
 	}
+    public void calcHealth()
+    {
+        healthCalculated = playerHealth / hpMax;
+        UIhealth.fillAmount = healthCalculated;
+    }
     public void attackControls()
     {
         if (attackingOn == true)
