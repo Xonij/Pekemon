@@ -52,7 +52,7 @@ public class playerAttacking : MonoBehaviour {
     {
         if (attackingOn == true)
         {
-            if (Input.GetKeyDown(KeyCode.Q)&&atkAllow==true)
+            if (Input.GetButtonDown("attack")&&atkAllow==true)
             {
                 StartCoroutine(atkdelay());
             }

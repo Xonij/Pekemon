@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class playerButtonControl : MonoBehaviour {
 
     public gamemanagement gm;
-    public GameObject evolves,reppu;
+    public GameObject evolves,reppu,map,sleep;
+    public Vector3 bedPosition;
     public openCanvas openWindow;
-
+    public GameObject pet;
 
 	void Start ()
     {
-		
-	}
+        pet = GameObject.FindWithTag("Pet");
+    }
 	void Update ()
     {
         playerOtherButtons();
@@ -54,7 +55,36 @@ public class playerButtonControl : MonoBehaviour {
                 openWindow = openCanvas.reppu;
             }
         }
+        if (Input.GetButtonDown("map"))
+        {
+            if (openWindow == openCanvas.map)//is activated
+            {
+                map.SetActive(false);
+                Time.timeScale = 1;
+                Cursor.visible = false;
+                openWindow = openCanvas.NONE;
+            }
+            else if (openWindow == openCanvas.NONE)
+            {
+                map.SetActive(true);
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                openWindow = openCanvas.map;
+            }
+        }
     }
+    public void itemsInbackpack()
+    {
+        //for(int o=0;o<gm.GetComponents<gamemanagement>().a)
+    }
+    public void sleepButton()
+    {
+        this.gameObject.transform.position = bedPosition;
+        pet.gameObject.transform.position = bedPosition;
+        sleep.gameObject.SetActive(false);
+        Cursor.visible = false; Time.timeScale = 1;
+    }
+    public void exitSleepWindow() { sleep.gameObject.SetActive(false); Cursor.visible = false; Time.timeScale = 1; }
 #region selectPetButtons
     public void m1() { gm.GetComponent<gamemanagement>().CurrentPetInt = 1; }
     public void m2() { gm.GetComponent<gamemanagement>().CurrentPetInt = 2; }
@@ -83,5 +113,5 @@ public class playerButtonControl : MonoBehaviour {
 }
 public enum openCanvas
 {
-NONE,evolutions,reppu
+NONE,evolutions,reppu,map
 }

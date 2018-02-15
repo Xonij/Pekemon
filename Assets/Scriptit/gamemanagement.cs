@@ -7,6 +7,7 @@ public class gamemanagement : MonoBehaviour {
     [Header("World")]
     public int day;
     public int timeOfDay;
+    public Items[] playersBackpack;
     [Header("__________________________")]
     //lists / arrays I dont fucking know
     [Range(1,20)]
