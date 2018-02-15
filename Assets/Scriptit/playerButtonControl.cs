@@ -10,6 +10,9 @@ public class playerButtonControl : MonoBehaviour {
     public Vector3 bedPosition;
     public openCanvas openWindow;
     public GameObject pet;
+    [Range(0,11)]
+    public int waypointIntToMoveTo;
+    public mapWaypoints[] waypoints;
 
 	void Start ()
     {
@@ -77,6 +80,32 @@ public class playerButtonControl : MonoBehaviour {
     {
         //for(int o=0;o<gm.GetComponents<gamemanagement>().a)
     }
+    public void mapW1() { waypointIntToMoveTo = 1; waypointTp(); }
+    public void mapW2() { waypointIntToMoveTo = 2; waypointTp(); }
+    public void mapW3() { waypointIntToMoveTo = 3; waypointTp(); }
+    public void mapW4() { waypointIntToMoveTo = 4; waypointTp(); }
+    public void mapW5() { waypointIntToMoveTo = 5; waypointTp(); }
+    public void mapW6() { waypointIntToMoveTo = 6; waypointTp(); }
+    public void mapW7() { waypointIntToMoveTo = 7; waypointTp(); }
+    public void mapW8() { waypointIntToMoveTo = 8; waypointTp(); }
+    public void mapW9() { waypointIntToMoveTo = 9; waypointTp(); }
+    public void mapW10() { waypointIntToMoveTo = 10; waypointTp(); }
+
+    public void waypointTp()
+    {
+        for(int p = 1; p < 11; p++)
+        {
+            if (p == waypointIntToMoveTo)
+            {
+                if(waypoints[p - 1].unlocked == true)
+                {
+                    this.gameObject.transform.position = waypoints[p - 1].loc;
+                    pet.gameObject.transform.position = waypoints[p - 1].loc;
+                }
+            }
+        }
+        waypointIntToMoveTo = 0;
+    }
     public void sleepButton()
     {
         this.gameObject.transform.position = bedPosition;
@@ -111,6 +140,13 @@ public class playerButtonControl : MonoBehaviour {
     public void m20() { gm.GetComponent<gamemanagement>().CurrentPetInt = 20; }
     #endregion
 }
+[System.Serializable]
+public class mapWaypoints
+    {
+    public string locationName;
+    public bool unlocked = false;
+    public Vector3 loc;
+    }
 public enum openCanvas
 {
 NONE,evolutions,reppu,map
