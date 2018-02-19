@@ -33,6 +33,11 @@ public class gamemanagement : MonoBehaviour {
             }
         }
     }
+    public void sleepBehavior()
+    {
+        
+        //do pet evolution scene
+    }
 }
 [System.Serializable]
 public class Monsters

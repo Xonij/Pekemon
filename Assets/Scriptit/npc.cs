@@ -65,6 +65,7 @@ public class npc : MonoBehaviour {
         else if (angle > 1f && angle < 3f) { Debug.Log("left"); }
         else if (angle > -2.25f && angle < -0.75f) { Debug.Log("right"); }
         */
+        /*
         if ((angle < (-Mathf.PI/4)*3 && angle > -Mathf.PI)||(angle > (Mathf.PI / 4) * 3 && angle < Mathf.PI))
         { Debug.Log("up"); skinHolder.GetComponent<SpriteRenderer>().sprite = npcprites[0].sprite; }
         if (angle > (-Mathf.PI / 4) && angle < (Mathf.PI / 4))
@@ -73,5 +74,6 @@ public class npc : MonoBehaviour {
         { Debug.Log("left"); skinHolder.GetComponent<SpriteRenderer>().sprite = npcprites[2].sprite; }
         if ((angle > (-Mathf.PI / 4) * 3 && angle < (-Mathf.PI / 4)))
         { Debug.Log("right"); skinHolder.GetComponent<SpriteRenderer>().sprite = npcprites[3].sprite; }
+        */
     }
 }
