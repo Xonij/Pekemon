@@ -4,6 +4,21 @@ Assets/mainMenu.unity
 Assets/2Dmain.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.LevelReset
+<<<<<<< HEAD
+=======
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
+dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
+8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
+13c0cc12d9db99559b2469b7b524857c UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationTrack
+c28edace1fdf0563f7e72075531c5744 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioPlayableAsset
+31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioTrack
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.BasicPlayableBehaviour
+ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.ControlPlayableAsset
+31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ControlTrack
+31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
+31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
+df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+>>>>>>> 243772120bce0f489f9964733aeec0d3babadbce
 c5b8be11159c5e93f4540351a39ccab9 Assembly-CSharp.dll:.WaterTile
 d990522efee7ea143e3c537b5fccae07 Assembly-CSharp.dll:.houseSceneVersion
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -72,6 +87,21 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+<<<<<<< HEAD
+=======
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
+dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
+8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
+13c0cc12d9db99559b2469b7b524857c UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationTrack
+c28edace1fdf0563f7e72075531c5744 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioPlayableAsset
+31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioTrack
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.BasicPlayableBehaviour
+ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.ControlPlayableAsset
+31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ControlTrack
+31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
+31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
+df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+>>>>>>> 243772120bce0f489f9964733aeec0d3babadbce
 be856749a6ac2faf56dc1302ad483346 Assembly-CSharp.dll:.petBehaviour
 c574beae3f1daa1db1e4eb36aeb6e57f Assembly-CSharp.dll:.playerMovement
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -131,6 +161,10 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 536b5364312ec65f4f139de16a829ce9 Assembly-CSharp.dll:.playerButtonControl
+<<<<<<< HEAD
+=======
+9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+>>>>>>> 243772120bce0f489f9964733aeec0d3babadbce
 c8df6666de2c1c8972f7d56ade588626 Assembly-CSharp-firstpass.dll:.TouchPad
 f1c52d3acef233d8c4d94d8e25394791 Assembly-CSharp.dll:.gamemanagement
 d238a228a3468c01b9d7a73e13b76f06 Assembly-CSharp.dll:.Pause
