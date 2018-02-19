@@ -6,14 +6,18 @@ using UnityEngine.UI;
 public class playerButtonControl : MonoBehaviour {
 
     public gamemanagement gm;
-    public GameObject evolves,reppu;
+    public GameObject evolves,reppu,map,sleep;
+    public Vector3 bedPosition;
     public openCanvas openWindow;
-
+    public GameObject pet;
+    [Range(0,11)]
+    public int waypointIntToMoveTo;
+    public mapWaypoints[] waypoints;
 
 	void Start ()
     {
-		
-	}
+        pet = GameObject.FindWithTag("Pet");
+    }
 	void Update ()
     {
         playerOtherButtons();
@@ -54,7 +58,62 @@ public class playerButtonControl : MonoBehaviour {
                 openWindow = openCanvas.reppu;
             }
         }
+        if (Input.GetButtonDown("map"))
+        {
+            if (openWindow == openCanvas.map)//is activated
+            {
+                map.SetActive(false);
+                Time.timeScale = 1;
+                Cursor.visible = false;
+                openWindow = openCanvas.NONE;
+            }
+            else if (openWindow == openCanvas.NONE)
+            {
+                map.SetActive(true);
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                openWindow = openCanvas.map;
+            }
+        }
     }
+    public void itemsInbackpack()
+    {
+        //for(int o=0;o<gm.GetComponents<gamemanagement>().a)
+    }
+    public void mapW1() { waypointIntToMoveTo = 1; waypointTp(); }
+    public void mapW2() { waypointIntToMoveTo = 2; waypointTp(); }
+    public void mapW3() { waypointIntToMoveTo = 3; waypointTp(); }
+    public void mapW4() { waypointIntToMoveTo = 4; waypointTp(); }
+    public void mapW5() { waypointIntToMoveTo = 5; waypointTp(); }
+    public void mapW6() { waypointIntToMoveTo = 6; waypointTp(); }
+    public void mapW7() { waypointIntToMoveTo = 7; waypointTp(); }
+    public void mapW8() { waypointIntToMoveTo = 8; waypointTp(); }
+    public void mapW9() { waypointIntToMoveTo = 9; waypointTp(); }
+    public void mapW10() { waypointIntToMoveTo = 10; waypointTp(); }
+
+    public void waypointTp()
+    {
+        for(int p = 1; p < 11; p++)
+        {
+            if (p == waypointIntToMoveTo)
+            {
+                if(waypoints[p - 1].unlocked == true)
+                {
+                    this.gameObject.transform.position = waypoints[p - 1].loc;
+                    pet.gameObject.transform.position = waypoints[p - 1].loc;
+                }
+            }
+        }
+        waypointIntToMoveTo = 0;
+    }
+    public void sleepButton()
+    {
+        this.gameObject.transform.position = bedPosition;
+        pet.gameObject.transform.position = bedPosition;
+        sleep.gameObject.SetActive(false);
+        Cursor.visible = false; Time.timeScale = 1;
+    }
+    public void exitSleepWindow() { sleep.gameObject.SetActive(false); Cursor.visible = false; Time.timeScale = 1; }
 #region selectPetButtons
     public void m1() { gm.GetComponent<gamemanagement>().CurrentPetInt = 1; }
     public void m2() { gm.GetComponent<gamemanagement>().CurrentPetInt = 2; }
@@ -81,7 +140,14 @@ public class playerButtonControl : MonoBehaviour {
     public void m20() { gm.GetComponent<gamemanagement>().CurrentPetInt = 20; }
     #endregion
 }
+[System.Serializable]
+public class mapWaypoints
+    {
+    public string locationName;
+    public bool unlocked = false;
+    public Vector3 loc;
+    }
 public enum openCanvas
 {
-NONE,evolutions,reppu
+NONE,evolutions,reppu,map
 }

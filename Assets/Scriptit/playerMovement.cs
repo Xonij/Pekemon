@@ -15,7 +15,7 @@ public class playerMovement : MonoBehaviour {
 	}
 	void Update () {
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButton("run"))
         {
             speed = speedDefault * 2f;
         }

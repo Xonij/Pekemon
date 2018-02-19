@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class enemyMovement : MonoBehaviour {
 
+    Animator enemysAnimator;
     public GameObject player;
     public float distToPlayer;
     public state EnemyState=state.idle;
     [Range(0,1)]
     public int health;
+    public gamemanagement gm;
 
     void Start ()
-    {		
+    {
+        enemysAnimator = GetComponent<Animator>();
 	}
 	void Update ()
     {
+        if (distToPlayer < 10) { animationChanger(); }
         if(EnemyState != state.dead && health>0)
         {
             distToPlayer = Vector3.Distance(this.transform.position, player.transform.position);
-            if (distToPlayer < 8 && distToPlayer > 2.5f) { EnemyState = state.following; }
-            else if (distToPlayer <= 2.5f) { EnemyState = state.idle; }
+            if (distToPlayer < 8 && distToPlayer > 2.55f) { EnemyState = state.following; }
+            else if (distToPlayer <= 2.5f) { EnemyState = state.attack; }
+            else if(distToPlayer >= 10f) { EnemyState = state.idle; }
+            if (health <= 0) { EnemyState = state.dead; }
 
             if (EnemyState == state.following && player.GetComponent<playerAttacking>().playerHealth > 0)
             {
@@ -28,11 +34,19 @@ public class enemyMovement : MonoBehaviour {
             }
             if (health <= 0) { EnemyState = state.dead; }
         }
-        else { deadStateOperation(); }
+        else
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gm.GetComponent<gamemanagement>().currentPetAttackGain();
+            StartCoroutine(deathStateOperation());
+        }
     }
-    public void deadStateOperation()
+    public void animationChanger()
     {
-        Destroy(gameObject);
+        if (EnemyState == state.idle) { enemysAnimator.SetInteger("enemyStateInt", 0); }
+        if (EnemyState == state.following) { enemysAnimator.SetInteger("enemyStateInt", 1); }
+        if (EnemyState == state.attack) { enemysAnimator.SetInteger("enemyStateInt", 2); }
+        if (EnemyState == state.dead) { enemysAnimator.SetInteger("enemyStateInt", 3); }
     }
     IEnumerator randDelay()
     {
@@ -41,6 +55,12 @@ public class enemyMovement : MonoBehaviour {
         yield return new WaitForSeconds(Random.Range(1,4));
         if (health < 0)
         { EnemyState = state.idle; }
+    }
+    IEnumerator deathStateOperation()
+    {
+        yield return new WaitForSeconds(2f);
+
+        Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -52,5 +72,5 @@ public class enemyMovement : MonoBehaviour {
 }
 public enum state
 {
-idle,following,dead
+idle,following,attack,dead
 }
