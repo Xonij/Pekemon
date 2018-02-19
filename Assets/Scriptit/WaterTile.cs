@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 ﻿using System.Collections;
 using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using UnityEngine;
-=======
 ﻿using UnityEngine;
->>>>>>> 243772120bce0f489f9964733aeec0d3babadbce
 using UnityEngine.Tilemaps;
 
 public class WaterTile : Tile
