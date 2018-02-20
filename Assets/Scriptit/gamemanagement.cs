@@ -13,6 +13,7 @@ public class gamemanagement : MonoBehaviour {
     public Image kello;
     [Header("__________________________")]
     public Monsters Pet;
+    public Items chosenItem;
     public Items[] playersBackpack;
     [Header("__________________________")]
     //lists / arrays I dont fucking know
@@ -24,11 +25,14 @@ public class gamemanagement : MonoBehaviour {
     public houses[] enterableBuildings;
     public GameObject evolvingCanvas;
     public Image petImg, petNextEvolveImg,animation;
+    public Text[] reppuText;
+    public Image reppuItemImg;
 
 	void Start () {
         Pet = AllMonsters[0];
         Cursor.visible = false;
         //StartCoroutine(evolutionUI());
+        reppuVisuals();
 	}
 	void Update ()
     {
@@ -73,6 +77,24 @@ public class gamemanagement : MonoBehaviour {
     public void sleepBehavior()
     {
         //do pet evolution scene
+    }
+    public void reppuVisuals()
+    {
+        for(int e = 0; e < AllItems.Length; e++)
+        {
+            for (int t = 0; t < playersBackpack.Length; t++)
+            {
+                if (playersBackpack[t].name == AllItems[e].name)
+                {
+                    playersBackpack[t] = AllItems[e];
+                }
+            }
+        }
+        for(int r = 0; r < 10; r++)
+        {
+            reppuText[r].text = playersBackpack[r].name;
+            reppuItemImg.sprite = playersBackpack[0].itemImage;
+        }
     }
     public void statPetEvolutions()
     {

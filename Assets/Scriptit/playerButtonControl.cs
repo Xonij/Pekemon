@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class playerButtonControl : MonoBehaviour {
 
@@ -21,6 +22,7 @@ public class playerButtonControl : MonoBehaviour {
 	void Update ()
     {
         playerOtherButtons();
+        bb();
     }
     public void playerOtherButtons()
     {
@@ -76,10 +78,35 @@ public class playerButtonControl : MonoBehaviour {
             }
         }
     }
-    public void itemsInbackpack()
+    public void bb()
     {
-        //for(int o=0;o<gm.GetComponents<gamemanagement>().a)
+        if(EventSystem.current.currentSelectedGameObject != null)
+        {
+            //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+            /*
+            if (EventSystem.current.currentSelectedGameObject.name == "b1") { }
+            if (EventSystem.current.currentSelectedGameObject.name == "b2") { }
+            if (EventSystem.current.currentSelectedGameObject.name == "b3") { }
+            if (EventSystem.current.currentSelectedGameObject.name == "b4") { }
+            if (EventSystem.current.currentSelectedGameObject.name == "b5") { }
+
+            if (EventSystem.current.currentSelectedGameObject.name == "b6") { }
+            if (EventSystem.current.currentSelectedGameObject.name == "b7") { }
+            if (EventSystem.current.currentSelectedGameObject.name == "b8") { }
+            if (EventSystem.current.currentSelectedGameObject.name == "b9") { }
+            if (EventSystem.current.currentSelectedGameObject.name == "b10") { }
+            */
+            for (int g = 0; g < 10; g++)
+            {
+                if (EventSystem.current.currentSelectedGameObject.name == "b"+g.ToString())
+                {
+                    
+                    gm.chosenItem = gm.playersBackpack[g-1];
+                }
+            }
+        }
     }
+    #region mapButtons
     public void mapW1() { waypointIntToMoveTo = 1; waypointTp(); }
     public void mapW2() { waypointIntToMoveTo = 2; waypointTp(); }
     public void mapW3() { waypointIntToMoveTo = 3; waypointTp(); }
@@ -90,7 +117,7 @@ public class playerButtonControl : MonoBehaviour {
     public void mapW8() { waypointIntToMoveTo = 8; waypointTp(); }
     public void mapW9() { waypointIntToMoveTo = 9; waypointTp(); }
     public void mapW10() { waypointIntToMoveTo = 10; waypointTp(); }
-
+#endregion
     public void waypointTp()
     {
         for(int p = 1; p < 11; p++)
