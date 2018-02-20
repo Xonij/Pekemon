@@ -267,6 +267,7 @@
     <Compile Include="Assets\Scriptit\enemyMovement.cs" />
     <Compile Include="Assets\Scriptit\gamemanagement.cs" />
     <Compile Include="Assets\Scriptit\houseSceneVersion.cs" />
+    <Compile Include="Assets\Scriptit\mobSpawner.cs" />
     <Compile Include="Assets\Scriptit\npc.cs" />
     <Compile Include="Assets\Scriptit\npcColliderVersion.cs" />
     <Compile Include="Assets\Scriptit\objectDisabler.cs" />
