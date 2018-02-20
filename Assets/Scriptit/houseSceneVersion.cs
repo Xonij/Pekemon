@@ -47,7 +47,7 @@ public class houseSceneVersion : MonoBehaviour {
             player.GetComponent<playerButtonControl>().sleep.gameObject.SetActive(true);
             Time.timeScale = 0;
             Cursor.visible = true;
-
+            player.GetComponent<playerButtonControl>().bedPosition = this.gameObject.transform.position;
         }
     }
     void OnTriggerExit2D(Collider2D other)

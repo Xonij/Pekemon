@@ -10,12 +10,15 @@ public class enemyMovement : MonoBehaviour {
     public state EnemyState=state.idle;
     [Range(0,1)]
     public int health;
-    public gamemanagement gm;
+    //public gamemanagement gm;
+    public GameObject gm;
 
     void Start ()
     {
         enemysAnimator = GetComponent<Animator>();
-	}
+        player = GameObject.FindWithTag("Player");
+        gm = GameObject.FindWithTag("GameManagementTag");
+    }
 	void Update ()
     {
         if (distToPlayer < 10) { animationChanger(); }
