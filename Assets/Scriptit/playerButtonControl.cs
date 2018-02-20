@@ -82,25 +82,10 @@ public class playerButtonControl : MonoBehaviour {
     {
         if(EventSystem.current.currentSelectedGameObject != null)
         {
-            //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-            /*
-            if (EventSystem.current.currentSelectedGameObject.name == "b1") { }
-            if (EventSystem.current.currentSelectedGameObject.name == "b2") { }
-            if (EventSystem.current.currentSelectedGameObject.name == "b3") { }
-            if (EventSystem.current.currentSelectedGameObject.name == "b4") { }
-            if (EventSystem.current.currentSelectedGameObject.name == "b5") { }
-
-            if (EventSystem.current.currentSelectedGameObject.name == "b6") { }
-            if (EventSystem.current.currentSelectedGameObject.name == "b7") { }
-            if (EventSystem.current.currentSelectedGameObject.name == "b8") { }
-            if (EventSystem.current.currentSelectedGameObject.name == "b9") { }
-            if (EventSystem.current.currentSelectedGameObject.name == "b10") { }
-            */
             for (int g = 0; g < 10; g++)
             {
                 if (EventSystem.current.currentSelectedGameObject.name == "b"+g.ToString())
                 {
-                    
                     gm.chosenItem = gm.playersBackpack[g-1];
                 }
             }
